@@ -4,7 +4,7 @@ GITPODDIR=$(pwd)
 cd ..
 BASEDIR=$(pwd)
 cd ..
-REDMINEDIR=$BASEDIR/redmine
+REDMINEDIR=$(pwd)/redmine
 if [ ! -d redmine ]; then
     git clone https://github.com/redmine/redmine.git
     cd redmine || exit
