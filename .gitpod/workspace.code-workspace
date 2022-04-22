@@ -1,10 +1,10 @@
 {
 	"folders": [
 		{
-			"path": "../redmine"
+			"path": "../../redmine"
 		},
 		{
-			"path": "."
+			"path": ".."
 		}
 	],
 	"settings": {}
