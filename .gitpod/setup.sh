@@ -8,7 +8,7 @@ git clone https://github.com/redmine/redmine.git
 cd redmine
 REDMINEDIR=`pwd`
 cd $REDMINEDIR/plugins
-cp -pr $BASEDIR .
+ln -s $BASEDIR .
 cp $GITPODDIR/database.yml $REDMINEDIR/config/
 cd $REDMINEDIR
 bundle install
