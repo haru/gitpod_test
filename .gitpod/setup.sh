@@ -1,16 +1,19 @@
 #!/bin/sh
-cd `dirname $0`
-GITPODDIR=`pwd`
+cd $(dirname "$0") || exit
+GITPODDIR=$(pwd)
 cd ..
-BASEDIR=`pwd`
+BASEDIR=$(pwd)
 cd ..
-git clone https://github.com/redmine/redmine.git
-cd redmine
-REDMINEDIR=`pwd`
-cd $REDMINEDIR/plugins
-ln -s $BASEDIR .
-cp $GITPODDIR/database.yml $REDMINEDIR/config/
-cd $REDMINEDIR
+REDMINEDIR=$BASEDIR/redmine
+if [ ! -d redmine ]; then
+    git clone https://github.com/redmine/redmine.git
+    cd redmine || exit
+    cd "$REDMINEDIR"/plugins || exit
+    ln -s "$BASEDIR" .
+    cp "$GITPODDIR"/database.yml "$REDMINEDIR"/config/
+fi
+cd "$REDMINEDIR" || exit
+gem install ruby-debug-ide
 bundle install
 bundle exec rake db:migrarte
 bundle exec rake redmine:plugins:migrate
