@@ -3,6 +3,8 @@
 tasks:
   - init: sh -x ./.gitpod/setup.sh
     command: echo 'start script'
+    env:
+      REDMINE_VERSION: '4.2-stable'
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 ports:

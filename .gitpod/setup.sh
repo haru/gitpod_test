@@ -6,7 +6,7 @@ BASEDIR=$(pwd)
 cd ..
 REDMINEDIR=$(pwd)/redmine
 if [ ! -d redmine ]; then
-    git clone https://github.com/redmine/redmine.git
+    git clone https://github.com/redmine/redmine.git -b $REDMINE_VERSION
     cd redmine || exit
     cd "$REDMINEDIR"/plugins || exit
     ln -s "$BASEDIR" .
