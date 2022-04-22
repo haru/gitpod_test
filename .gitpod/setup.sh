@@ -11,6 +11,9 @@ if [ ! -d redmine ]; then
     cd "$REDMINEDIR"/plugins || exit
     ln -s "$BASEDIR" .
     cp "$GITPODDIR"/database.yml "$REDMINEDIR"/config/
+    mkdir "$REDMINEDIR"/.vscode
+    cd "$REDMINEDIR"/.vscode || exit
+    ln -s "$GITPODDIR"/launch.json .
 fi
 cd "$REDMINEDIR" || exit
 gem install ruby-debug-ide
