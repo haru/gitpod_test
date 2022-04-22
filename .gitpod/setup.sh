@@ -15,5 +15,5 @@ fi
 cd "$REDMINEDIR" || exit
 gem install ruby-debug-ide
 bundle install
-bundle exec rake db:migrarte
+bundle exec rake db:migrate
 bundle exec rake redmine:plugins:migrate
