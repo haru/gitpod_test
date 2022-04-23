@@ -1,10 +1,10 @@
 {
 	"folders": [
 		{
-			"path": "../../redmine"
+			"path": "."
 		},
 		{
-			"path": ".."
+			"path": "../__PLUGIN__NAME"
 		}
 	],
 	"settings": {}
