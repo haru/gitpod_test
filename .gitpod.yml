@@ -17,3 +17,5 @@ vscode:
   extensions:
     - bung87.rails
     - rebornix.ruby
+    - aliariff.vscode-erb-beautify
+    - mbessey.vscode-rufo

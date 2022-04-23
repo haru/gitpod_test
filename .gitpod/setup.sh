@@ -1,6 +1,9 @@
 #!/bin/sh
 cd $(dirname "$0") || exit
 GITPODDIR=$(pwd)
+IGNOREDIR="$HOME"/.config/git
+mkdir -p "$IGNOREDIR"
+cp "$GITPODDIR"/ignore "$IGNOREDIR"
 cd ..
 BASEDIR=$(pwd)
 cd ..
@@ -16,12 +19,9 @@ if [ ! -d redmine ]; then
     ln -s "$GITPODDIR"/launch.json .
 fi
 cd "$REDMINEDIR" || exit
+cp "$GITPODDIR"/gitpod.code-workspace "$REDMINEDIR"
 gem install ruby-debug-ide
 bundle install
 bundle exec rake db:migrate
 bundle exec rake redmine:plugins:migrate
 
-IGNOREDIR="$HOME"/.config/git
-
-mkdir -p "$IGNOREDIR"
-cp "$GITPODDIR"/ignore "$IGNOREDIR"
