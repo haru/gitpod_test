@@ -20,3 +20,8 @@ gem install ruby-debug-ide
 bundle install
 bundle exec rake db:migrate
 bundle exec rake redmine:plugins:migrate
+
+IGNOREDIR="$HOME"/.config/git
+
+mkdir -p "$IGNOREDIR"
+cp "$GITPODDIR"/ignore "$IGNOREDIR"
