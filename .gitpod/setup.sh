@@ -25,4 +25,6 @@ gem install ruby-debug-ide
 bundle install
 bundle exec rake db:migrate
 bundle exec rake redmine:plugins:migrate
+bundle exec rake db:migrate RAILS_ENV=test
+bundle exec rake redmine:plugins:migrate RAILS_ENV=test
 
